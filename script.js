@@ -209,7 +209,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     message: document.getElementById('message').value.trim()
   };
 
-  fetch('https://script.google.com/macros/s/AKfycbx3zy4YjOJp2qDmHhyCOY4qxPDwyt6zC2dOe37D9w96YBSU3WwSq9k8bt-x6gQT7eA/exec', {
+  fetch('script/sdjdsldsk', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
