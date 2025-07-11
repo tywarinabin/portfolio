@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nabin Tiwari | .NET Full Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Nabin Tiwari</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2 class="hero-title">Hello, I'm <span>Nabin Tiwari</span></h2>
+      <h3 class="hero-subtitle">Full Stack .NET Developer</h3>
+      <p class="hero-text">Building scalable web applications with .NET, Angular, and Azure. Passionate about clean code and efficient solutions.</p>
+      <div class="btn-group">
+        <a class="btn" href="#contact">Hire Me</a>
+        <a class="btn btn-outline" href="#projects">View Work</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="image-container">
+        <img src="images/profile.png" alt="Nabin Tiwari">
+      </div>
+    </div>
+  </section>
+
+ <section id="projects" class="section-bg">
+  <div class="container">
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="projects">
+      <!-- Visible Projects -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/project1.jpg" alt="E-Commerce Platform">
+          <div class="project-overlay">
+            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+            <a href="#" class="project-code"><i class="fas fa-code"></i></a>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>E-Commerce Platform</h3>
+          <p>Full-featured online store with product management, cart functionality, and payment processing.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">ASP.NET Core</span>
+            <span class="tech-tag">Angular</span>
+            <span class="tech-tag">SQL Server</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/project2.jpg" alt="Task Management App">
+          <div class="project-overlay">
+            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+            <a href="#" class="project-code"><i class="fas fa-code"></i></a>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Task Management App</h3>
+          <p>Collaborative task management system with real-time updates and team features.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">.NET 6</span>
+            <span class="tech-tag">SignalR</span>
+            <span class="tech-tag">Azure</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/project3.jpg" alt="API Gateway">
+          <div class="project-overlay">
+            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+            <a href="#" class="project-code"><i class="fas fa-code"></i></a>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>API Gateway</h3>
+          <p>Microservices gateway with authentication, rate limiting, and request aggregation.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">ASP.NET Core</span>
+            <span class="tech-tag">Ocelot</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden Projects -->
+      <div class="project-card hidden-project">
+        <div class="project-image">
+          <img src="images/project4.jpg" alt="Chat App">
+          <div class="project-overlay">
+            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+            <a href="#" class="project-code"><i class="fas fa-code"></i></a>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Chat Application</h3>
+          <p>Real-time chat with group messaging, SignalR, and authentication.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">ASP.NET Core</span>
+            <span class="tech-tag">SignalR</span>
+            <span class="tech-tag">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card hidden-project">
+        <div class="project-image">
+          <img src="images/project5.jpg" alt="Portfolio CMS">
+          <div class="project-overlay">
+            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+            <a href="#" class="project-code"><i class="fas fa-code"></i></a>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Portfolio CMS</h3>
+          <p>Custom content management system for managing personal portfolios.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">.NET Core</span>
+            <span class="tech-tag">Razor Pages</span>
+            <span class="tech-tag">EF Core</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Button -->
+    <div class="view-more-wrapper">
+      <button class="btn view-more-btn">
+        View More <span id="arrow-icon">›</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>.NET Developer with Full Stack Experience</h3>
+          <p>I'm a passionate .NET developer with 6 months of professional experience building enterprise-grade web applications. My journey in software development began with a strong foundation in computer science and has evolved through hands-on experience with modern web technologies.</p>
+          <p>I specialize in creating robust backend services with ASP.NET Core and building responsive frontends with Angular. My approach combines technical excellence with clean architecture principles to deliver maintainable and scalable solutions.</p>
+          <div class="personal-info">
+            <div class="info-item">
+              <span class="info-label">Name:</span>
+              <span class="info-value">Nabin Tiwari</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Email:</span>
+              <span class="info-value">nabintywari111@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Experience:</span>
+              <span class="info-value">6 Months</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Location:</span>
+              <span class="info-value">Kathmandu, Nepal</span>
+            </div>
+          </div>
+          <div class="btn-group">
+            <a class="btn" href="#">Download CV</a>
+            <a class="btn btn-outline" href="#contact">Contact Me</a>
+          </div>
+        </div>
+        <div class="about-image">
+          <div class="image-frame">
+            <img src="images/profile.png" alt="Nabin Tiwari">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section-bg">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skills-column">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">C#</span>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">ASP.NET Core</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" data-width="80"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Entity Framework</span>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" data-width="75"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">HTML5</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">CSS3</span>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" data-width="85"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-column">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" data-width="80"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Angular</span>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" data-width="75"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Bootstrap</span>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Java</span>
+              <span class="skill-percent">70%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" data-width="70"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">SQL Server</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" data-width="80"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience & Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2023 - Present</div>
+          <div class="timeline-content">
+            <h3>Junior .NET Developer</h3>
+            <h4>TechSolutions Inc.</h4>
+            <p>Developing and maintaining enterprise web applications using ASP.NET Core and Angular. Collaborating with cross-functional teams to deliver high-quality software solutions.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2025 Jan - 2025 June</div>
+          <div class="timeline-content">
+            <h3>Full Stack .NET Intern</h3>
+            <h4>EPAM Systems</h4>
+            <p>Assisted in developing RESTful APIs and web applications. Gained hands-on experience with Entity Framework and Azure services.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2021 - 2025</div>
+          <div class="timeline-content">
+            <h3>B.Tech Computer Science</h3>
+            <h4>LNCT University, India</h4>
+            <p>Specialized in software engineering and web development. Completed coursework in algorithms, databases, and software architecture.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-bg">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="contact-details">
+              <h3>Location</h3>
+              <p>Kathmandu, Nepal</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <a href="mailto:nabintywari111@gmail.com">nabintywari111@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-phone"></i>
+            <div class="contact-details">
+              <h3>Phone</h3>
+              <a href="tel:+9779841234567">+977 9841234567</a>
+            </div>
+          </div>
+        </div>
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea id="message" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer">
+      <div class="footer-content">
+        <div class="footer-logo">Nabin <span>Tiwari</span></div>
+        <p class="footer-text">Full Stack .NET Developer building modern web applications.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-stack-overflow"></i></a>
+        </div>
+        <div class="copyright">
+          &copy; 2023 Nabin Tiwari. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
