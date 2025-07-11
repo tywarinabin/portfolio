@@ -92,33 +92,33 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   // Form submission
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+  // const contactForm = document.getElementById('contactForm');
+  // if (contactForm) {
+  //   contactForm.addEventListener('submit', function(e) {
+  //     e.preventDefault();
       
-      // Get form values
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
+  //     // Get form values
+  //     const name = document.getElementById('name').value;
+  //     const email = document.getElementById('email').value;
+  //     const subject = document.getElementById('subject').value;
+  //     const message = document.getElementById('message').value;
       
-      // Basic form validation
-      if (!name || !email || !subject || !message) {
-        alert('Please fill in all fields.');
-        return;
-      }
+  //     // Basic form validation
+  //     if (!name || !email || !subject || !message) {
+  //       alert('Please fill in all fields.');
+  //       return;
+  //     }
       
-      // Here you would typically send the form data to a server
-      console.log('Form submitted:', { name, email, subject, message });
+  //     // Here you would typically send the form data to a server
+  //     console.log('Form submitted:', { name, email, subject, message });
       
-      // Show success message
-      alert('Thank you for your message! I will get back to you soon.');
+  //     // Show success message
+  //     alert('Thank you for your message! I will get back to you soon.');
       
-      // Reset form
-      contactForm.reset();
-    });
-  }
+  //     // Reset form
+  //     contactForm.reset();
+  //   });
+  // }
 
   // Header scroll effect
   window.addEventListener('scroll', function() {
@@ -223,6 +223,6 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   })
   .catch(error => {
     console.error('Error!', error.message);
-    alert('There was an error sending your message.');
+    alert('Something went wrong !!!!!!!!!!!!!');
   });
 });
