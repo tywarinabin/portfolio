@@ -209,20 +209,23 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     message: document.getElementById('message').value.trim()
   };
 
-  fetch('script/sdjdsldsk', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(result => {
-    alert('Message sent successfully!');
-    document.getElementById('contactForm').reset();
-  })
-  .catch(error => {
-    console.error('Error!', error.message);
-    alert('Something went wrong !!!!!!!!!!!!!');
-  });
+  // Basic form validation
+  if (!data.name || !data.email || !data.subject || !data.message) {
+    return;
+  }
+
+  // Show success message
+  const successMessage = document.getElementById('successMessage');
+  successMessage.style.display = 'block';
+  
+  // Reset form
+  document.getElementById('contactForm').reset();
+  
+  // Hide success message after 5 seconds
+  setTimeout(() => {
+    successMessage.style.display = 'none';
+  }, 5000);
+
+  // Simulate form submission (in real implementation, you would send to server)
+  console.log('Form submitted:', data);
 });

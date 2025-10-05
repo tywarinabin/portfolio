@@ -1,14 +1,26 @@
 :root {
-  --primary-green: #38bdf8;       /* sky blue primary */
-  --dark-green: #0284c7;          /* deeper sky blue */
-  --light-green: #e0f2fe;         /* soft sky blue for light surfaces */
-  --text-color: #0c4a6e;          /* dark blue for headings/text */
-  --text-light: #0369a1;          /* medium blue for lighter text */
-  --bg-color: #ffffff;            /* clean white background */
-  --card-bg: #eff6ff;             /* bluish background for cards */
-  --section-bg: #f0f9ff;          /* blue-tinted section backgrounds */
-  --box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2); /* blue-toned soft shadow */
-  --transition: all 0.3s ease;
+  /* Consistent Blue Theme */
+  --primary-color: #3b82f6;       /* Blue primary */
+  --secondary-color: #1d4ed8;     /* Darker blue */
+  --accent-color: #60a5fa;        /* Light blue */
+  --success-color: #10b981;       /* Green for success */
+  --warning-color: #f59e0b;       /* Orange for warnings */
+  --light-blue: #dbeafe;          /* Very light blue */
+  --dark-blue: #1e40af;           /* Dark blue */
+  --text-color: #1f2937;          /* Dark gray text */
+  --text-light: #6b7280;          /* Medium gray text */
+  --text-white: #ffffff;          /* White text */
+  
+  /* Background Colors */
+  --bg-color: #ffffff;            /* Clean white */
+  --card-bg: #f8fafc;             /* Light card background */
+  --section-bg: #f1f5f9;          /* Light section background */
+  
+  /* Shadows and Effects */
+  --box-shadow: 0 8px 25px rgba(59, 130, 246, 0.1);
+  --box-shadow-hover: 0 15px 35px rgba(59, 130, 246, 0.2);
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-fast: all 0.2s ease;
 }
 
 
@@ -24,9 +36,30 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--text-color);
-  background-color: var(--bg-color);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(29, 78, 216, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(96, 165, 250, 0.1) 0%, transparent 50%);
+  z-index: -1;
+  animation: backgroundFloat 20s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(1deg); }
 }
 
 /* Container */
@@ -66,7 +99,7 @@ section {
   position: absolute;
   width: 80px;
   height: 4px;
-  background: var(--primary-green);
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
@@ -76,11 +109,11 @@ section {
 /* Buttons */
 .btn {
   display: inline-block;
-  background-color: var(--primary-green);
-  color: white;
+  background: linear-gradient(135deg, #22c55e, #16a34a); /* green */
+  color: var(--text-white);
   padding: 12px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
   font-weight: 600;
   text-decoration: none;
@@ -88,24 +121,42 @@ section {
   text-align: center;
   transition: var(--transition);
   box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn:hover {
-  background-color: var(--dark-green);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--box-shadow-hover);
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid var(--primary-green);
-  color: var(--primary-green);
+  border: 2px solid #22c55e;
+  color: #22c55e;
   box-shadow: none;
 }
 
 .btn-outline:hover {
-  background: var(--primary-green);
-  color: var(--text-color);
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: var(--text-white);
+  border-color: transparent;
 }
 
 .btn-group {
@@ -159,12 +210,13 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--primary-green);
+  color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
 nav a.active-link {
-  color: black;
-  border-bottom: 2px solid var(--primary-green);
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
 }
 
 nav a::after {
@@ -175,7 +227,7 @@ nav a::after {
   bottom: -5px;
   left: 0;
   transition: var(--transition);
-  background: var(--primary-green);
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
 }
 
 nav a:hover::after {
@@ -210,7 +262,10 @@ nav a:hover::after {
 }
 
 .hero-title span {
-  color: var(--primary-green);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-subtitle {
@@ -236,9 +291,10 @@ nav a:hover::after {
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid var(--primary-green);
-  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.2);
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   animation: float 3s ease-in-out infinite;
+  position: relative;
 }
 
 .image-container img {
@@ -258,6 +314,9 @@ nav a:hover::after {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 25px;
+  background: linear-gradient(135deg, #fff7ed, #ffedd5); /* soft orange bg */
+  padding: 20px;
+  border-radius: 12px;
 }
 
 .project-card {
@@ -297,12 +356,13 @@ nav a:hover::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(56, 189, 248, 0.85);
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.9), rgba(239, 68, 68, 0.9)); /* orange to red */
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: var(--transition);
+  backdrop-filter: blur(5px);
 }
 
 .project-card:hover .project-overlay {
@@ -324,7 +384,7 @@ nav a:hover::after {
 }
 
 .project-link:hover, .project-code:hover {
-  background: var(--light-green);
+  background: #ffedd5; /* light orange */
   transform: translateY(-2px);
 }
 
@@ -353,12 +413,13 @@ nav a:hover::after {
 }
 
 .tech-tag {
-  background: var(--light-green);
-  color: var(--text-color);
-  padding: 5px 12px;
-  border-radius: 15px;
+  background: #ffedd5; /* light orange */
+  color: #7c2d12; /* dark orange-brown */
+  padding: 6px 12px;
+  border-radius: 9999px;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
+  border: 1px solid #fdba74; /* orange border */
 }
 
 /* About Section */
@@ -374,7 +435,7 @@ nav a:hover::after {
 
 .about-text h3 {
   font-size: 1.8rem;
-  color: var(--primary-green);
+  color: var(--secondary-color);
   margin-bottom: 15px;
 }
 
@@ -431,35 +492,91 @@ nav a:hover::after {
 }
 
 .skill-item {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s;
+}
+
+.skill-item:hover::before {
+  left: 100%;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
 }
 
 .skill-info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  align-items: center;
 }
 
 .skill-name {
   font-weight: 600;
+  color: var(--text-color);
+  font-size: 1.1rem;
 }
 
 .skill-percent {
-  color: var(--primary-green);
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .progress-bar {
-  height: 8px;
-  background: #e5e7eb;
-  border-radius: 4px;
+  height: 12px;
+  background: var(--light-color);
+  border-radius: 10px;
   overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .progress {
   height: 100%;
-  background: var(--primary-green);
-  border-radius: 4px;
-  transition: width 1s ease-in-out;
+  border-radius: 10px;
+  transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Orange-red theme for all skills */
+.skill-item .progress { 
+  background: linear-gradient(90deg, #f97316, #ef4444); /* orange to red */
+}
+
+.progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: progressShine 2s ease-in-out infinite;
+}
+
+@keyframes progressShine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 /* Experience Section */
@@ -474,7 +591,7 @@ nav a:hover::after {
   content: '';
   position: absolute;
   width: 4px;
-  background: var(--primary-green);
+  background: var(--secondary-color);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -501,7 +618,7 @@ nav a:hover::after {
   position: absolute;
   width: 20px;
   height: 20px;
-  background: var(--primary-green);
+  background: var(--secondary-color);
   border: 3px solid var(--bg-color);
   border-radius: 50%;
   top: 15px;
@@ -534,7 +651,7 @@ nav a:hover::after {
 }
 
 .timeline-date {
-  color: var(--primary-green);
+  color: var(--secondary-color);
   font-weight: 600;
   margin-bottom: 5px;
 }
@@ -585,7 +702,7 @@ nav a:hover::after {
 
 .contact-card i {
   font-size: 1.5rem;
-  color: var(--primary-green);
+  color: var(--secondary-color);
 }
 
 .contact-details h3 {
@@ -601,14 +718,49 @@ nav a:hover::after {
 }
 
 .contact-details a:hover {
-  color: var(--primary-green);
+  color: var(--secondary-color);
 }
 
 .contact-form {
   background: var(--card-bg);
   padding: 25px;
-  border-radius: 8px;
+  border-radius: 15px;
   box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.success-message {
+  display: none;
+  background: linear-gradient(135deg, var(--success-color), #34d399);
+  color: var(--text-white);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  animation: slideInDown 0.5s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .form-group {
@@ -617,18 +769,24 @@ nav a:hover::after {
 
 .form-group input, .form-group textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 5px;
+  padding: 15px;
+  border: 2px solid #cbd5e1; /* visible slate border */
+  border-radius: 10px;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   transition: var(--transition);
+  background: var(--bg-color);
+}
+
+.form-group input:hover, .form-group textarea:hover {
+  border-color: #94a3b8; /* slightly darker on hover */
 }
 
 .form-group input:focus, .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary-green);
-  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* blue glow */
+  transform: translateY(-2px);
 }
 
 .form-group textarea {
@@ -650,7 +808,10 @@ footer {
 }
 
 .footer-logo span {
-  color: var(--primary-green);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .footer-text {
@@ -696,10 +857,10 @@ footer {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  width: 45px;
-  height: 45px;
-  background: var(--primary-green);
-  color: var(--text-color);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-white);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -717,9 +878,11 @@ footer {
   opacity: 1;
   visibility: visible;
 }
+
 .back-to-top:hover {
-  background: var(--dark-green);
-  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: var(--box-shadow-hover);
 }
 
 /* Animations */
@@ -889,19 +1052,22 @@ footer {
 .view-more-btn {
   margin: 20px auto;
   display: block;
-  padding: 10px 20px;
+  padding: 12px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   font-size: 16px;
   cursor: pointer;
   transition: var(--transition);
-  background: var(--primary-green);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-white);
   box-shadow: var(--box-shadow);
+  font-weight: 600;
 }
 
 .view-more-btn:hover {
-  background: var(--dark-green);
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--box-shadow-hover);
 }
 
 /* Icon positioning fixes */
