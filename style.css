@@ -1080,5 +1080,7 @@ footer {
 .project-link, .project-code {
   color: var(--text-color);
 }
-
+.btn-hire {
+  visibility: hidden;
+}
 
